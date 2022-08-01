@@ -1,0 +1,124 @@
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.label {
+		margin: {
+			bottom: 8px;
+		};
+	}
+
+	.select {
+		height: 56px;
+		padding: 17px 16px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		background: {
+			color: #FFF;
+		};
+		border: {
+			width: 1px;
+			style: solid;
+			color: #000;
+		};
+		cursor: pointer;
+	}
+
+	.error {
+		border: {
+			style: solid;
+			width: 1px;
+			color: #FF0000;
+		};
+		color: #FF0000;
+	}
+
+	.default {
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+
+	.active {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border: {
+			bottom: {
+				width: 0;
+			};
+		};
+	}
+
+	.arrow_wrapper {
+		position: absolute;
+		top: 45px;
+		right: 16px;
+		pointer-events: none;
+
+		svg {
+			width: 12px;
+			height: auto;
+			transform: rotate(180deg);
+			z-index: 10;
+		}
+	}
+
+	.rotate {
+		svg {
+			transform: rotate(0);
+		}
+	}
+
+	.options_container {
+		position: absolute;
+		top: 82px;
+		left: 0;
+		width: 100%;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		border: {
+			width: 1px;
+			style: solid;
+			color: #000;
+		};
+		background: {
+			color: #FFF;
+		};
+		color: #000;
+		cursor: pointer;
+		z-index: 10;
+
+		.single_option {
+			padding: {
+				top: 13px;
+				bottom: 13px;
+				left: 16px;
+			};
+
+			&:hover {
+				background: {
+					color: #AAA;
+				};
+			}
+
+			&:last-child:hover {
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+			}
+		}
+	}
+
+	.error_message {
+		display: block;
+		height: 17px;
+		margin: {
+			top: 3px;
+			left: 12px;
+		};
+		font: {
+			size: 12px;
+		};
+		color: #FF0000;
+	}
+}

@@ -1,0 +1,41 @@
+.button {
+	width: 100%;
+	height: 60px;
+	border: {
+		width: 2px;
+		color: #000;
+		style: solid;
+		radius: 100px;
+	};
+	background: {
+		color: rgba(0, 100, 220, .9);
+	};
+	font: {
+		weight: bold;
+	};
+	letter-spacing: 0.8px;
+	transition: .1s;
+
+	&:hover {
+		background: {
+			color: rgba(0, 50, 255, 1);
+		};
+	}
+}
+
+.active {
+	cursor: pointer;
+}
+
+.disabled {
+	border: {
+		color: #AAA;
+	};
+	cursor: not-allowed;
+
+	&:hover {
+		background: {
+			color: rgba(0, 100, 220, .5);
+		};
+	}
+}
