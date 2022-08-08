@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/football-practice-manager/static/css/main.54c39e67.css",
-    "main.js": "/football-practice-manager/static/js/main.d38d8a2e.js",
+    "main.js": "/football-practice-manager/static/js/main.c4744eb2.js",
     "static/media/background.jpg": "/football-practice-manager/static/media/background.760b114833215e89f10f.jpg",
     "static/media/arrow.svg": "/football-practice-manager/static/media/arrow.034046f1c05b3ea6b052b60ea3a46258.svg",
     "index.html": "/football-practice-manager/index.html",
     "static/media/close.svg": "/football-practice-manager/static/media/close.aac73cf0d96d956a64823afe21da95f9.svg",
     "main.54c39e67.css.map": "/football-practice-manager/static/css/main.54c39e67.css.map",
-    "main.d38d8a2e.js.map": "/football-practice-manager/static/js/main.d38d8a2e.js.map"
+    "main.c4744eb2.js.map": "/football-practice-manager/static/js/main.c4744eb2.js.map"
   },
   "entrypoints": [
     "static/css/main.54c39e67.css",
-    "static/js/main.d38d8a2e.js"
+    "static/js/main.c4744eb2.js"
   ]
 }
