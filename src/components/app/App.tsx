@@ -19,6 +19,9 @@ import Form from '@components/form/Form';
 // types
 import {PracticeObject} from '@src/@types';
 
+// data
+import {practiceTypesData} from '@data/practiceTypes';
+
 const App = () => {
 	const [allPractices, setAllPractices] = useState<PracticeObject[]>([]);
 	const [practiceToEdit, setPracticeToEdit] = useState<PracticeObject>();
@@ -77,30 +80,15 @@ const App = () => {
 			<div className={styles.content}>
 				<Header handleModalOpen={() => setIsModalOpen(true)}/>
 				<div className={styles.practice_types_list_wrapper}>
-					<SinglePracticeType
-						name="Rozgrzewki"
-						practices={allPractices.filter(practice => practice.practiceType === 'Rozgrzewki')}
-						handleEdit={handlePracticeEdit}
-						handleDelete={handleDeletePractice}
-					/>
-					<SinglePracticeType
-						name="Ćwiczenia motoryczne"
-						practices={allPractices.filter(practice => practice.practiceType === 'Ćwiczenia motoryczne')}
-						handleEdit={handlePracticeEdit}
-						handleDelete={handleDeletePractice}
-					/>
-					<SinglePracticeType
-						name="Ćwiczenia techniczne"
-						practices={allPractices.filter(practice => practice.practiceType === 'Ćwiczenia techniczne')}
-						handleEdit={handlePracticeEdit}
-						handleDelete={handleDeletePractice}
-					/>
-					<SinglePracticeType
-						name="Gry zadaniowe"
-						practices={allPractices.filter(practice => practice.practiceType === 'Gry zadaniowe')}
-						handleEdit={handlePracticeEdit}
-						handleDelete={handleDeletePractice}
-					/>
+					{practiceTypesData.map((practiceType, index) => (
+						<SinglePracticeType
+							key={index}
+							name={practiceType}
+							practices={allPractices.filter(practice => practice.practiceType === practiceType)}
+							handleEdit={handlePracticeEdit}
+							handleDelete={handleDeletePractice}
+						/>
+					))}
 				</div>
 			</div>
 			{isModalOpen &&

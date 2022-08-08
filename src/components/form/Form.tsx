@@ -43,7 +43,7 @@ const Form:FC<FormProps> = ({
 	showError,
 	onSubmit
 }) => {
-	const [practiceTypeValue, setPracticeTypeValue] = useState('');
+	const [practiceTypeValue, setPracticeTypeValue] = useState<PracticeTypes>('');
 	const [nameValue, setNameValue] = useState('');
 	const [numberOfPlayersValue, setNumberOfPlayersValue] = useState('');
 	const [descriptionValue, setDescriptionValue] = useState('');
@@ -56,12 +56,17 @@ const Form:FC<FormProps> = ({
 		allPracticesMemo: allPractices,
 		editPracticeMemo: editPractice,
 		practiceMemo: {
-			practiceType: practiceTypeValue as PracticeTypes,
+			practiceType: practiceTypeValue,
 			name: nameValue,
 			numberOfPlayers: numberOfPlayersValue,
 			description: descriptionValue
 		}
 	}), [allPractices, editPractice, descriptionValue, nameValue, practiceTypeValue, numberOfPlayersValue]);
+	
+	const handleNumberOfPlayersChange = (value: string) => {
+		const integerNumber = Number(value).toFixed(0);
+		setNumberOfPlayersValue(integerNumber);
+	}
 	
 	useEffect(() => {
 		if (editPracticeMemo) {
@@ -123,7 +128,7 @@ const Form:FC<FormProps> = ({
 					label="Ilość zawodników"
 					placeholder="Wprowadź ilość"
 					value={numberOfPlayersValue}
-					onChange={setNumberOfPlayersValue}
+					onChange={handleNumberOfPlayersChange}
 					error={showError && (isNaN(Number(numberOfPlayersValue)) || Number(numberOfPlayersValue) < 1)}
 					errorMessage={numberOfPlayersValue === '' ?
 						"Podaj liczbę"

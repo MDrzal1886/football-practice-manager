@@ -1,8 +1,4 @@
-import {
-	Dispatch,
-	FC,
-	SetStateAction
-} from 'react';
+import {FC} from 'react';
 
 // styles
 import styles from './Input.module.scss';
@@ -12,7 +8,7 @@ type InputProps = {
 	label: string,
 	placeholder: string,
 	value: string,
-	onChange: Dispatch<SetStateAction<string>>,
+	onChange: (value: string) => void,
 	error: boolean,
 	errorMessage?: string,
 	disabled: boolean

@@ -13,11 +13,14 @@ import styles from './Select.module.scss';
 // hooks
 import useOutsideClick from '@hooks/useClickOutside';
 
+// types
+import {PracticeTypes} from '@src/@types';
+
 type SelectProps = {
 	label: string,
-	options: string[],
+	options: PracticeTypes[],
 	value: string,
-	onChange: (value: string) => void,
+	onChange: (value: PracticeTypes) => void,
 	error: boolean,
 	errorMessage?: string
 }
