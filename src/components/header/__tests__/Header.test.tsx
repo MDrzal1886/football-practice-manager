@@ -6,7 +6,6 @@ import {
 // components
 import Header from '@components/header/Header';
 
-
 describe('Header tests', () => {
 	it('should show h1', () => {
 		render(<Header handleModalOpen={jest.fn} />);

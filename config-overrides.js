@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-	paths: function override(config) {
+	webpack: function override(config) {
 	config.resolve = {
 		...config.resolve,
 		alias: {

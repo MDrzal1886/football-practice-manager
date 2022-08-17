@@ -27,7 +27,10 @@ const SinglePracticeType:FC<SinglePracticeTypeProps> = ({
 }) => {
 	const [practiceToOpen, setPracticeToOpen] = useState('');
 	return (
-		<div className={styles.single_practice_type_wrapper}>
+		<div
+			className={styles.single_practice_type_wrapper}
+			data-testid="single-type"
+		>
 			<h2 className={`${styles.type_title} ${practices.length > 0 ? '' : styles.no_margin}`}>{name}</h2>
 			<div className={styles.practices_list_wrapper}>
 				{practices.map(practice => (

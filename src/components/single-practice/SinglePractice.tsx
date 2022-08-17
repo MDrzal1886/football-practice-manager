@@ -35,7 +35,10 @@ const SinglePractice:FC<SinglePracticeProps> = ({
 	handleDelete
 }) => {
 	return (
-		<div className={styles.wrapper}>
+		<div
+			className={styles.wrapper}
+			data-testid="single-practice"
+		>
 			<div className={styles.name_and_date_wrapper}>
 				<p className={styles.text}>Nazwa: <b>{practice.name}</b></p>
 				<p>Dodano: <b>{useConvertDate(practice.createdAt)}</b></p>

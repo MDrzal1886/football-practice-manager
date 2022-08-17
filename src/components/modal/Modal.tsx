@@ -18,7 +18,10 @@ const Modal:FC<ModalProps> = ({
 	children,
 	handleClose
 }) => (
-	<div className={styles.background}>
+	<div
+		className={styles.background}
+		data-testid="modal"
+	>
 		<div className={styles.modal_wrapper}>
 			<div
 				className={styles.close}
