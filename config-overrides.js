@@ -1,6 +1,7 @@
 const path = require('path');
 
-module.exports = function override(config) {
+module.exports = {
+	paths: function override(config) {
 	config.resolve = {
 		...config.resolve,
 		alias: {
@@ -14,4 +15,18 @@ module.exports = function override(config) {
 		},
 	};
 	return config;
-};
+	},
+	jest: function(config) {
+		return {
+			...config,
+			moduleNameMapper: {
+				'\\.(css|scss)$': 'identity-obj-proxy',
+				'^@src/(.*)$': '<rootDir>/src/src/$1',
+				'^@components/(.*)$': '<rootDir>/src/components/$1',
+				'^@assets/(.*)$': '<rootDir>/src/assets/$1',
+				'^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
+				'^@data/(.*)$': '<rootDir>/src/data/$1'
+			}
+		}
+	}
+}
