@@ -27,7 +27,7 @@ const Modal:FC<ModalProps> = ({
 				className={styles.close}
 				onClick={handleClose}
 			>
-				<Close />
+				<Close data-testid="close-icon"/>
 			</div>
 			{children}
 		</div>
